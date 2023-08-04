@@ -234,96 +234,68 @@ button {
 }
 
 /* header section start */
-header {
+.header {
   overflow: hidden;
   display: flex; /* Display menu links and logo in a row */
-  justify-content: space-between; /* Space them evenly */
   align-items: center; /* Center vertically */
-  background-color: #c03d3d; /* Set the header background color */
-  padding: 10px 20px; /* Adjust header padding */
+}
+
+.header a {
+  display: block;
+  color: #1a1919;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  margin-left: 20px;
+}
+
+.header a:hover {
+  background-color: #ddd; /* Set the hover background color */
+  color: black; /* Set the hover text color to black */
+}
+
+.header a.active {
+  color: rgb(12, 12, 12);
+}
+
+/* Hide the link that should open and close the topnav on small screens */
+.header .icon {
+  display: none;
 }
 
 .logo {
   padding: 0; /* Remove the padding around the logo */
-  margin-left: -120px; /* Add margin to move the logo further to the left */
+  margin-right: 20px; /* Add margin to move the logo further to the left */
+  width: fit-content;
 }
 
-/* Style the links inside the navigation bar */
-header .menu-links a {
-  color: #050505;
-  text-align: center;
-  padding: 24px 18px;
-  text-decoration: none;
-  margin-left: 50px;
-  font-size: 17px;
-  transition: background-color 0.2s, color 0.2s; /* Add transition for smooth hover effect */
-}
-
-/* Add a subtle hover effect */
-header .menu-links a:hover {
-  background-color: #a1b5eb; /* Set the hover background color */
-  color: black; /* Set the hover text color to black */
-  border-radius: 90px; /* Reduce the border-radius */
-
-}
-
-/* Add an active class to highlight the current page */
-header .menu-links a.active {
-  background-color: transparent;
-  color: black;
-}
-
-.menu-links {
-  display: flex;
-  align-items: center;
-}
-
-
-
-/* Hide the link that should open and close the topnav on small screens */
-.icon {
-  display: none;
-}
-
-/* Move the menu links to the right corner on desktop */
-@media screen and (min-width: 607px) {
-  .menu-links {
-    margin-left: auto; /* Push menu links to the right */
-  }
-}
-
-/* When the screen is less than 600 pixels wide, hide all links except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
-@media screen and (max-width: 606px) {
-  .menu-links a:not(:first-child) {
+/* When the screen is less than 607 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+@media screen and (max-width: 607px) {
+  .header a:not(:first-child) {
     display: none;
   }
-  .icon {
+  .header a.icon {
     float: right;
     display: block;
   }
-}
 
-/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
-@media screen and (max-width: 606px) {
-  header.responsive {
-    flex-direction: column;
+  /* Set the menu links to display vertically on mobile devices */
+  .header.responsive {
+    flex-direction: column; /* Stack the menu links and logo vertically */
+    align-items: center; /* Align items to the center */
   }
-  .menu-links.responsive {
-    display: flex;
-    flex-direction: column;
-  }
-  .menu-links.responsive a {
+
+  .header.responsive a {
     display: block;
-    padding: 10px 16px;
-  }
-  .icon.responsive {
-    float: right;
-    display: block;
+    margin-bottom: 10px; /* Add some margin between each menu link */
   }
 }
-/* header section end*/
+/* header section end */
 
 
+
+  
 
 
 
@@ -2279,12 +2251,13 @@ p {
     line-height: 2; /* Adjust the line-height as needed */
     letter-spacing: 0px; /* Adjust the letter-spacing as needed */
     text-align: justify; /* Align the text justified */
+    
   }
   
   .lorem_text {
     width: 100%;
     float: left;
-    font-size: 13px;
+    font-size: 15px;
     color: #000000 !important;
     margin: 0;
     font-weight: 500;
@@ -2297,7 +2270,7 @@ p {
   }
 }
 /* Add media query for responsiveness */
-@media (max-width: 768px) {
+@media (max-width: 607px) {
 .about_text{
   font-size: 15px;
   align-items: center;
@@ -2331,7 +2304,7 @@ p {
   }
 }
 /* Media query for mobile devices */
-@media (max-width: 768px) {
+@media (max-width: 607px) {
   /* Mobile styles for Client Section */
   
   .client_section_2 {
@@ -2525,31 +2498,3 @@ p {
     }
   }
   /* Packages section end */
-/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
-@media screen and (max-width: 606px) {
-  header a:not(:first-child) {
-    display: none;
-  }
-  header a.icon {
-    float: right;
-    display: block;
-  }
-}
-
-/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
-@media screen and (max-width: 606px) {
-  header.responsive {
-    position: relative;
-  }
-  header.responsive a.icon {
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  header.responsive a {
-    float: none;
-    display: block;
-    text-align: left;
-  }
-}
-}

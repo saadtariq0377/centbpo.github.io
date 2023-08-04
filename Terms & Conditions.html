@@ -71,27 +71,27 @@
 </head>
 <body>
    
-   <!-- Header section start -->
-  <header class="header_section">
-   <div class="container">
-     <div class="header_top">
-       <div class="logo">
-         <a href="#"><img src="images/logo.png" alt="Logo"></a>
-       </div>
-       <nav class="menu_section">
-         <ul>
-           <li><a href="index.html">Home</a></li>
-           <li><a href="Advantages.html">Advantages</a></li>
-           <li><a href="Placements.html">Placements</a></li>
-           <li><a href="Resources.html">Resources</a></li>
-           <li><a href="contact.html">Contact</a></li>
-           
-         </ul>
-       </nav>
-     </div>
-   </div>
- </header>
- <!-- Header section end -->
+  <!-- Header section start -->
+<header style="background-color: #e9e5e5;">
+  <div class="header" id="myheader">
+   
+        <div class="logo">
+          <a href="#"><img src="images/logo.png" alt="Logo"></a>
+        </div>
+      
+          <a href="index.html" class="active">Home</a>
+          <a href="Advantages.html">Advantages</a>
+          <a href="Placements.html">Placements</a>
+          <a href="Resources.html">Resources</a>
+          <a href="contact.html">Contact</a>
+          <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+          </a>
+        </div>
+     
+</header>
+<!-- Header section end -->
+
   <!-- Main content of the Terms & Conditions page -->
   <div class=" Terms container">
     <h1>Terms & Conditions</h1>
@@ -170,8 +170,17 @@
     </div>
   </div>
   <!-- Copyright section end -->
-  
-
-</body>
+  <script>
+    /* Toggle between adding and removing the "responsive" class to header when the user clicks on the icon */
+ function myFunction() {
+   var x = document.getElementById("myheader");
+   if (x.classList.contains("responsive")) {
+     x.classList.remove("responsive");
+   } else {
+     x.classList.add("responsive");
+   }
+ }
+ </script>
+ </body>
 
 </html>
